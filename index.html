@@ -45,14 +45,7 @@
     a:focus {
       text-decoration-thickness: 2px;
     }
-    
-.disclaimer {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  opacity: 0.72;
-}
-    
+
     .site-header {
       width: 100%;
       border-bottom: 1px solid var(--border);
@@ -114,13 +107,21 @@
       max-width: 820px;
     }
 
-    .eyebrow {
+    .eyebrow,
+    .section-label {
       font-family: Arial, sans-serif;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-size: 0.78rem;
       color: var(--accent);
+    }
+
+    .eyebrow {
       margin-bottom: 1.5rem;
+    }
+
+    .section-label {
+      margin-bottom: 1rem;
     }
 
     h1 {
@@ -194,15 +195,6 @@
       align-items: start;
     }
 
-    .section-label {
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -231,7 +223,8 @@
       margin-bottom: 0;
     }
 
-    .meta-list {
+    .meta-list,
+    .status-list {
       list-style: none;
       padding: 0;
       margin: 1.5rem 0 0;
@@ -239,7 +232,8 @@
       color: var(--muted);
     }
 
-    .meta-list li {
+    .meta-list li,
+    .status-list li {
       padding: 0.75rem 0;
       border-top: 1px solid var(--accent-soft);
     }
@@ -251,10 +245,12 @@
       background: var(--surface);
     }
 
-    .fine-print {
+    .disclaimer {
+      margin-top: 1rem;
       font-family: Arial, sans-serif;
-      font-size: 0.92rem;
-      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.4;
+      opacity: 0.72;
     }
 
     footer {
@@ -265,6 +261,12 @@
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    footer p {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
     }
 
     @media (max-width: 760px) {
@@ -303,70 +305,6 @@
         max-width: 260px;
       }
     }
-    .newsletter-form-wrap {
-  max-width: 520px;
-  margin-top: 1.5rem;
-}
-
-#mlb2-41537359.ml-form-embedContainer {
-  width: 100% !important;
-  margin: 0 !important;
-}
-
-#mlb2-41537359 .ml-form-align-center {
-  text-align: left !important;
-}
-
-#mlb2-41537359 .ml-form-embedWrapper.embedForm {
-  width: 100% !important;
-  max-width: 520px !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-#mlb2-41537359 .ml-form-embedBody,
-#mlb2-41537359 .ml-form-successBody {
-  padding: 0 !important;
-}
-
-#mlb2-41537359 .ml-form-formContent,
-#mlb2-41537359 .ml-form-fieldRow,
-#mlb2-41537359 .ml-field-group,
-#mlb2-41537359 .ml-form-embedPermissions,
-#mlb2-41537359 .ml-form-embedSubmit {
-  width: 100% !important;
-  float: none !important;
-}
-
-#mlb2-41537359 input[type="email"] {
-  width: 100% !important;
-  padding: 0.9rem 1rem !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(76, 42, 76, 0.25) !important;
-  font: inherit !important;
-}
-
-#mlb2-41537359 .ml-form-embedPermissionsContent p {
-  font-size: 0.85rem !important;
-  line-height: 1.45 !important;
-  margin: 0.75rem 0 1rem !important;
-}
-
-#mlb2-41537359 .ml-form-recaptcha {
-  margin-bottom: 1rem !important;
-}
-
-#mlb2-41537359 .ml-form-embedSubmit button {
-  width: 100% !important;
-  padding: 0.9rem 1.2rem !important;
-  border-radius: 999px !important;
-  border: none !important;
-  background: #4c2a4c !important;
-  color: #fffaf3 !important;
-  font-weight: 700 !important;
-  cursor: pointer !important;
-}
   </style>
 </head>
 
@@ -378,7 +316,7 @@
       <div class="nav-links">
         <a href="#book">Book</a>
         <a href="#author">Author</a>
-        <a href="#newsletter">Newsletter</a>
+        <a href="#status">Status</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -398,430 +336,7 @@
         </p>
 
         <p>
-          This site is being built as a home for the book, the writing, and the quiet work of bringing a life into language.
-        </p>
-
-        <div class="button-row">
-          <a class="button" href="#book">Read About the Book</a>
-          <a class="button secondary" href="mailto:info@cljohnsonwrites.com">Contact the Author</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="book" aria-labelledby="book-heading">
-      <div class="section-grid">
-        <div>
-          <div class="section-label">The Book</div>
-          <h2 id="book-heading"><em>Elephants and Flowers: Finding Myself Through Prince</em></h2>
-        </div>
-
-        <div class="card">
-          <p>
-            <em>Elephants and Flowers</em> is a forthcoming memoir by C.L. Johnson about music, memory, disability, faith, and the long work of becoming visible to oneself.
-          </p>
-
-          <p>
-            <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>C.L. Johnson | Elephants and Flowers</title>
-  <meta name="description" content="The official author website of C.L. Johnson, author of the forthcoming memoir Elephants and Flowers." />
-
-  <style>
-    :root {
-      --background: #f7f1e8;
-      --surface: #fffaf3;
-      --text: #241f21;
-      --muted: #5f5558;
-      --accent: #4b244a;
-      --accent-soft: #e8ddec;
-      --border: #ded2c7;
-      --max-width: 1080px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    a {
-      color: var(--accent);
-      text-underline-offset: 4px;
-      text-decoration-thickness: 1px;
-    }
-
-    a:hover,
-    a:focus {
-      text-decoration-thickness: 2px;
-    }
-    
-.disclaimer {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  opacity: 0.72;
-}
-    
-    .site-header {
-      width: 100%;
-      border-bottom: 1px solid var(--border);
-      background: rgba(247, 241, 232, 0.94);
-    }
-
-    .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .brand {
-      font-family: Arial, sans-serif;
-      font-size: 0.88rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.92rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .hero {
-      min-height: 72vh;
-      display: flex;
-      align-items: center;
-      padding: 5rem 0;
-    }
-
-    .hero-inner {
-      max-width: 820px;
-    }
-
-    .eyebrow {
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-
-    h1 {
-      font-size: clamp(3.25rem, 9vw, 7rem);
-      line-height: 0.95;
-      margin: 0 0 1.25rem;
-      font-weight: normal;
-      letter-spacing: -0.04em;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.05;
-      margin: 0 0 1.25rem;
-      font-weight: normal;
-      letter-spacing: -0.03em;
-    }
-
-    h3 {
-      font-size: clamp(1.45rem, 3vw, 2.1rem);
-      line-height: 1.2;
-      margin: 0 0 1rem;
-      font-weight: normal;
-      color: var(--accent);
-    }
-
-    p {
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
-      max-width: 720px;
-      margin: 0 0 1.25rem;
-      color: var(--muted);
-    }
-
-    .hero h2 {
-      color: var(--accent);
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 2rem;
-    }
-
-    .button {
-      display: inline-block;
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      color: var(--surface);
-      background: var(--accent);
-      padding: 0.8rem 1rem;
-      border-radius: 999px;
-      text-decoration: none;
-    }
-
-    .button.secondary {
-      color: var(--accent);
-      background: transparent;
-      border: 1px solid var(--accent);
-    }
-
-    .section {
-      padding: 4.5rem 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .section-label {
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: 0 18px 45px rgba(75, 36, 74, 0.06);
-    }
-
-    .author-layout {
-      display: grid;
-      grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .author-photo {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      box-shadow: 0 18px 45px rgba(75, 36, 74, 0.08);
-      display: block;
-    }
-
-    .author-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .meta-list {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem 0 0;
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-    }
-
-    .meta-list li {
-      padding: 0.75rem 0;
-      border-top: 1px solid var(--accent-soft);
-    }
-
-    .contact-box {
-      margin-top: 1.5rem;
-      padding: 1.25rem;
-      border-left: 4px solid var(--accent);
-      background: var(--surface);
-    }
-
-    .fine-print {
-      font-family: Arial, sans-serif;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    footer {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 2rem 1.5rem 3rem;
-      border-top: 1px solid var(--border);
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 760px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 0.75rem;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 4rem 0;
-      }
-
-      .section {
-        padding: 3.5rem 0;
-      }
-
-      .section-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .card {
-        padding: 1.5rem;
-      }
-
-      .author-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .author-photo {
-        max-width: 260px;
-      }
-    }
-    .newsletter-form-wrap {
-  max-width: 520px;
-  margin-top: 1.5rem;
-}
-
-#mlb2-41537359.ml-form-embedContainer {
-  width: 100% !important;
-  margin: 0 !important;
-}
-
-#mlb2-41537359 .ml-form-align-center {
-  text-align: left !important;
-}
-
-#mlb2-41537359 .ml-form-embedWrapper.embedForm {
-  width: 100% !important;
-  max-width: 520px !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-#mlb2-41537359 .ml-form-embedBody,
-#mlb2-41537359 .ml-form-successBody {
-  padding: 0 !important;
-}
-
-#mlb2-41537359 .ml-form-formContent,
-#mlb2-41537359 .ml-form-fieldRow,
-#mlb2-41537359 .ml-field-group,
-#mlb2-41537359 .ml-form-embedPermissions,
-#mlb2-41537359 .ml-form-embedSubmit {
-  width: 100% !important;
-  float: none !important;
-}
-
-#mlb2-41537359 input[type="email"] {
-  width: 100% !important;
-  padding: 0.9rem 1rem !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(76, 42, 76, 0.25) !important;
-  font: inherit !important;
-}
-
-#mlb2-41537359 .ml-form-embedPermissionsContent p {
-  font-size: 0.85rem !important;
-  line-height: 1.45 !important;
-  margin: 0.75rem 0 1rem !important;
-}
-
-#mlb2-41537359 .ml-form-recaptcha {
-  margin-bottom: 1rem !important;
-}
-
-#mlb2-41537359 .ml-form-embedSubmit button {
-  width: 100% !important;
-  padding: 0.9rem 1.2rem !important;
-  border-radius: 999px !important;
-  border: none !important;
-  background: #4c2a4c !important;
-  color: #fffaf3 !important;
-  font-weight: 700 !important;
-  cursor: pointer !important;
-}
-  </style>
-</head>
-
-<body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#top">C.L. Johnson</a>
-
-      <div class="nav-links">
-        <a href="#book">Book</a>
-        <a href="#author">Author</a>
-        <a href="#newsletter">Newsletter</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero" aria-labelledby="site-title">
-      <div class="hero-inner">
-        <div class="eyebrow">Official Author Website</div>
-
-        <h1 id="site-title">C.L. Johnson</h1>
-
-        <h2>Author of the forthcoming memoir <em>Elephants and Flowers</em></h2>
-
-        <p>
-          A memoir of music, memory, disability, faith, and becoming.
-        </p>
-
-        <p>
-          This site is being built as a home for the book, the writing, and the quiet work of bringing a life into language.
+          Coming Saturday, September 12, 2026.
         </p>
 
         <div class="button-row">
@@ -852,14 +367,13 @@
           </p>
 
           <p>
-            Intimate, reflective, and spiritually searching, Elephants and Flowers is a memoir about music as survival, disability as embodied complexity, fandom as community, grief as love in motion, and the long practice of learning to answer with a life of one’s own.
-          </p>
-          
-          <p>
-            <em>Elephants and Flowers: Finding Myself Through Prince</em> will be available Saturday, September 12, 2026 through Amazon KDP in hardcover, paperback and Kindle formats.
+            Intimate, reflective, and spiritually searching, <em>Elephants and Flowers</em> is a memoir about music as survival, disability as embodied complexity, fandom as community, grief as love in motion, and the long practice of learning to answer with a life of one’s own.
           </p>
 
-          
+          <p>
+            <em>Elephants and Flowers: Finding Myself Through Prince</em> will be available Saturday, September 12, 2026 through Amazon KDP in hardcover, paperback, and Kindle formats.
+          </p>
+
           <ul class="meta-list" aria-label="Book details">
             <li><strong>Genre:</strong> Memoir</li>
             <li><strong>Status:</strong> Forthcoming</li>
@@ -890,278 +404,43 @@
             </p>
 
             <p>
-              <em>Elephants and Flowers: Finding Myself Through Prince</em> is his first memoir. In it, Johnson brings together decades of listening, writing, questioning, and remembering to tell the story of how one artist’s music helped him find language for his own life. He lives in Le Center, Minnesota with his mother, Linda and their cat, Gary.
-            </p>
-
-            <p>
-              He lives in Le Center, Minnesota with his cat, Gary.
+              <em>Elephants and Flowers: Finding Myself Through Prince</em> is his first memoir. In it, Johnson brings together decades of listening, writing, questioning, and remembering to tell the story of how one artist’s music helped him find language for his own life. He lives in Le Center, Minnesota with his mother, Linda, and their cat, Gary.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="newsletter" class="newsletter">
-  <div class="section-inner">
-    <p class="section-kicker">Newsletter</p>
-    <h2>Stay informed</h2>
-    <p>
-      Get occasional updates on <em>Elephants and Flowers</em>, including book news,
-      reflections, and behind-the-scenes notes.
-    </p>
-
-    <div class="newsletter-form-wrap">
-      <div id="mlb2-41537359" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41537359">
-        <div class="ml-form-align-center">
-          <div class="ml-form-embedWrapper embedForm">
-
-            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-              <form
-                class="ml-block-form"
-                action="https://assets.mailerlite.com/jsonp/2363970/forms/187964362336502955/subscribe"
-                data-code=""
-                method="post"
-                target="_blank"
-              >
-                <div class="ml-form-formContent">
-                  <div class="ml-form-fieldRow ml-last-item">
-                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <input
-                        aria-label="email"
-                        aria-required="true"
-                        type="email"
-                        class="form-control"
-                        name="fields[email]"
-                        placeholder="Email address"
-                        autocomplete="email"
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <div class="ml-form-embedPermissions">
-                  <div class="ml-form-embedPermissionsContent default privacy-policy">
-                    <p>You can unsubscribe anytime. For more details, review our Privacy Policy.</p>
-                  </div>
-                </div>
-
-                <div class="ml-form-recaptcha ml-validate-required">
-                  <script src="https://www.google.com/recaptcha/api.js"></script>
-                  <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
-                </div>
-
-                <input type="hidden" name="ml-submit" value="1">
-
-                <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Subscribe</button>
-                  <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    Loading...
-                  </button>
-                </div>
-
-                <input type="hidden" name="anticsrf" value="true">
-              </form>
-            </div>
-
-            <div class="ml-form-successBody row-success" style="display: none">
-              <div class="ml-form-successContent">
-                <h4>Thank you!</h4>
-                <p>You have successfully joined the subscriber list.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      function ml_webform_success_41537359() {
-        var $ = ml_jQuery || jQuery;
-        $('.ml-subscribe-form-41537359 .row-success').show();
-        $('.ml-subscribe-form-41537359 .row-form').hide();
-      }
-    </script>
-
-    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
-
-    <script>
-      fetch("https://assets.mailerlite.com/jsonp/2363970/forms/187964362336502955/takel");
-    </script>
-  </div>
-</section>
-
-    <section class="section" id="contact" aria-labelledby="contact-heading">
+    <section class="section" id="status" aria-labelledby="status-heading">
       <div class="section-grid">
         <div>
-          <div class="section-label">Contact</div>
-          <h2 id="contact-heading">Get in touch</h2>
+          <div class="section-label">Production Status</div>
+          <h2 id="status-heading">Where the Book Stands</h2>
         </div>
 
-        <div>
+        <div class="card">
           <p>
-            For reader notes, interview requests, podcast invitations, review inquiries, or questions about <em>Elephants and Flowers</em>, please write to:
+            <em>Elephants and Flowers: Finding Myself Through Prince</em> is currently in professional line editing and copyediting with Staci Kleinmaier, with editorial work scheduled for July 2026.
           </p>
 
-          <div class="contact-box">
-            <p>
-              <a href="mailto:info@cljohnsonwrites.com">info@cljohnsonwrites.com</a>
-            </p>
-          </div>
-
-          <p class="disclaimer">
-  <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
-</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 C.L. Johnson. All rights reserved.</p> ·
-    <p class="disclaimer">
-    <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
-  </p>
-    <p><a href="mailto:info@cljohnsonwrites.com">info@cljohnsonwrites.com</a></p>
-  </footer>
-</body>
-</html>
-
           <p>
-            <em>Elephants and Flowers</em> will be available Saturday, September 12, 2026 through Amazon KDP in paperback and Kindle formats.
+            The memoir is planned for release on <strong>Saturday, September 12, 2026</strong> in hardcover, paperback, and Kindle editions. Cover design and final production materials are in progress.
           </p>
 
-          <ul class="meta-list" aria-label="Book details">
-            <li><strong>Genre:</strong> Memoir</li>
-            <li><strong>Status:</strong> Forthcoming</li>
-            <li><strong>Release date:</strong> September 12, 2026</li>
-            <li><strong>Formats:</strong> Hardcover, Paperback and Kindle</li>
+          <p>
+            Ordering information, signed-copy details, and additional publication updates will be posted here as release approaches.
+          </p>
+
+          <ul class="status-list" aria-label="Production details">
+            <li><strong>Editing:</strong> In progress</li>
+            <li><strong>Cover design:</strong> In progress</li>
+            <li><strong>Planned release:</strong> September 12, 2026</li>
+            <li><strong>Retail path:</strong> Amazon KDP</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="author" aria-labelledby="author-heading">
-      <div class="section-grid">
-        <div>
-          <div class="section-label">The Author</div>
-          <h2 id="author-heading">About C.L. Johnson</h2>
-        </div>
-
-        <div class="author-layout">
-          <img
-            class="author-photo"
-            src="assets/author-photo.png"
-            alt="Author C.L. Johnson smiling in a studio portrait."
-          />
-
-          <div class="author-copy">
-            <p>
-              C.L. Johnson is a Minnesota writer whose work explores music, memory, disability, faith, grief, and the intimate ways art helps a person survive themselves.
-            </p>
-
-            <p>
-              His forthcoming memoir, <em>Elephants and Flowers</em>, traces a life shaped by sound, family memory, spiritual longing, and the slow work of becoming visible inside one’s own body.
-            </p>
-
-            <p>
-              He lives in Le Center, Minnesota with his cat, Gary.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="newsletter" class="newsletter">
-  <div class="section-inner">
-    <p class="section-kicker">Newsletter</p>
-    <h2>Stay informed</h2>
-    <p>
-      Get occasional updates on <em>Elephants and Flowers</em>, including book news,
-      reflections, and behind-the-scenes notes.
-    </p>
-
-    <div class="newsletter-form-wrap">
-      <div id="mlb2-41537359" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41537359">
-        <div class="ml-form-align-center">
-          <div class="ml-form-embedWrapper embedForm">
-
-            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-              <form
-                class="ml-block-form"
-                action="https://assets.mailerlite.com/jsonp/2363970/forms/187964362336502955/subscribe"
-                data-code=""
-                method="post"
-                target="_blank"
-              >
-                <div class="ml-form-formContent">
-                  <div class="ml-form-fieldRow ml-last-item">
-                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <input
-                        aria-label="email"
-                        aria-required="true"
-                        type="email"
-                        class="form-control"
-                        name="fields[email]"
-                        placeholder="Email address"
-                        autocomplete="email"
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <div class="ml-form-embedPermissions">
-                  <div class="ml-form-embedPermissionsContent default privacy-policy">
-                    <p>You can unsubscribe anytime. For more details, review our Privacy Policy.</p>
-                  </div>
-                </div>
-
-                <div class="ml-form-recaptcha ml-validate-required">
-                  <script src="https://www.google.com/recaptcha/api.js"></script>
-                  <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
-                </div>
-
-                <input type="hidden" name="ml-submit" value="1">
-
-                <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Subscribe</button>
-                  <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    Loading...
-                  </button>
-                </div>
-
-                <input type="hidden" name="anticsrf" value="true">
-              </form>
-            </div>
-
-            <div class="ml-form-successBody row-success" style="display: none">
-              <div class="ml-form-successContent">
-                <h4>Thank you!</h4>
-                <p>You have successfully joined the subscriber list.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      function ml_webform_success_41537359() {
-        var $ = ml_jQuery || jQuery;
-        $('.ml-subscribe-form-41537359 .row-success').show();
-        $('.ml-subscribe-form-41537359 .row-form').hide();
-      }
-    </script>
-
-    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
-
-    <script>
-      fetch("https://assets.mailerlite.com/jsonp/2363970/forms/187964362336502955/takel");
-    </script>
-  </div>
-</section>
-
     <section class="section" id="contact" aria-labelledby="contact-heading">
       <div class="section-grid">
         <div>
@@ -1181,18 +460,18 @@
           </div>
 
           <p class="disclaimer">
-  <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
-</p>
+            <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
+          </p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 C.L. Johnson. All rights reserved.</p> ·
+    <p>© 2026 C.L. Johnson. All rights reserved.</p>
     <p class="disclaimer">
-    <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
-  </p>
+      <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
+    </p>
     <p><a href="mailto:info@cljohnsonwrites.com">info@cljohnsonwrites.com</a></p>
   </footer>
 </body>
