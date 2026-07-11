@@ -9,14 +9,18 @@
 
   <style>
     :root {
-      --background: #f7f1e8;
+      --plum: #62465d;
+      --plum-deep: #2e2330;
+      --plum-soft: #a98598;
+      --parchment: #f7f1e7;
       --surface: #fffaf3;
-      --text: #241f21;
-      --muted: #5f5558;
-      --accent: #4b244a;
-      --accent-soft: #e8ddec;
-      --border: #ded2c7;
-      --max-width: 1080px;
+      --cream: #f3e8d8;
+      --gold: #c9a24a;
+      --text: #2e2330;
+      --muted: #675c63;
+      --border: #ded1c6;
+      --shadow: rgba(46, 35, 48, 0.12);
+      --max-width: 1120px;
     }
 
     * {
@@ -30,26 +34,28 @@
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: var(--background);
+      background: var(--parchment);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.68;
     }
 
     a {
-      color: var(--accent);
+      color: var(--plum);
       text-underline-offset: 4px;
       text-decoration-thickness: 1px;
     }
 
     a:hover,
     a:focus {
+      color: var(--plum-deep);
       text-decoration-thickness: 2px;
     }
 
     .site-header {
       width: 100%;
-      border-bottom: 1px solid var(--border);
-      background: rgba(247, 241, 232, 0.94);
+      background: var(--plum);
+      color: var(--cream);
+      border-bottom: 1px solid rgba(243, 232, 216, 0.2);
     }
 
     .nav {
@@ -65,9 +71,9 @@
     .brand {
       font-family: Arial, sans-serif;
       font-size: 0.88rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--cream);
       text-decoration: none;
     }
 
@@ -81,12 +87,12 @@
 
     .nav-links a {
       text-decoration: none;
-      color: var(--muted);
+      color: rgba(243, 232, 216, 0.84);
     }
 
     .nav-links a:hover,
     .nav-links a:focus {
-      color: var(--accent);
+      color: var(--cream);
       text-decoration: underline;
     }
 
@@ -97,14 +103,42 @@
     }
 
     .hero {
-      min-height: 72vh;
-      display: flex;
-      align-items: center;
-      padding: 5rem 0;
+      padding: 4.5rem 0 5rem;
     }
 
-    .hero-inner {
-      max-width: 820px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.65fr);
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+    }
+
+    .hero-cover-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-cover {
+      width: min(100%, 360px);
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 22px 55px var(--shadow);
+      border: 1px solid rgba(98, 70, 93, 0.16);
+      background: var(--surface);
+    }
+
+    .cover-caption {
+      margin-top: 0.85rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      text-align: center;
+      color: var(--muted);
     }
 
     .eyebrow,
@@ -113,7 +147,7 @@
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-size: 0.78rem;
-      color: var(--accent);
+      color: var(--plum);
     }
 
     .eyebrow {
@@ -125,19 +159,21 @@
     }
 
     h1 {
-      font-size: clamp(3.25rem, 9vw, 7rem);
+      font-size: clamp(3.4rem, 8vw, 6.8rem);
       line-height: 0.95;
       margin: 0 0 1.25rem;
       font-weight: normal;
       letter-spacing: -0.04em;
+      color: var(--plum-deep);
     }
 
     h2 {
       font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.05;
+      line-height: 1.08;
       margin: 0 0 1.25rem;
       font-weight: normal;
       letter-spacing: -0.03em;
+      color: var(--plum-deep);
     }
 
     h3 {
@@ -145,18 +181,23 @@
       line-height: 1.2;
       margin: 0 0 1rem;
       font-weight: normal;
-      color: var(--accent);
+      color: var(--plum);
     }
 
     p {
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
       max-width: 720px;
       margin: 0 0 1.25rem;
       color: var(--muted);
     }
 
     .hero h2 {
-      color: var(--accent);
+      color: var(--plum);
+    }
+
+    .release-date {
+      color: var(--plum-deep);
+      font-weight: bold;
     }
 
     .button-row {
@@ -170,17 +211,32 @@
       display: inline-block;
       font-family: Arial, sans-serif;
       font-size: 0.95rem;
-      color: var(--surface);
-      background: var(--accent);
-      padding: 0.8rem 1rem;
+      color: var(--cream);
+      background: var(--plum);
+      padding: 0.82rem 1.05rem;
       border-radius: 999px;
       text-decoration: none;
+      border: 1px solid var(--plum);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .button:hover,
+    .button:focus {
+      color: var(--cream);
+      background: var(--plum-deep);
+      transform: translateY(-1px);
     }
 
     .button.secondary {
-      color: var(--accent);
+      color: var(--plum);
       background: transparent;
-      border: 1px solid var(--accent);
+      border: 1px solid var(--plum);
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus {
+      color: var(--cream);
+      background: var(--plum);
     }
 
     .section {
@@ -200,7 +256,22 @@
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 2rem;
-      box-shadow: 0 18px 45px rgba(75, 36, 74, 0.06);
+      box-shadow: 0 18px 45px rgba(46, 35, 48, 0.07);
+    }
+
+    .accent-panel {
+      background: var(--plum);
+      color: var(--cream);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 18px 45px rgba(46, 35, 48, 0.12);
+    }
+
+    .accent-panel h2,
+    .accent-panel h3,
+    .accent-panel p,
+    .accent-panel a {
+      color: var(--cream);
     }
 
     .author-layout {
@@ -215,7 +286,7 @@
       max-width: 320px;
       border-radius: 24px;
       border: 1px solid var(--border);
-      box-shadow: 0 18px 45px rgba(75, 36, 74, 0.08);
+      box-shadow: 0 18px 45px rgba(46, 35, 48, 0.08);
       display: block;
     }
 
@@ -235,13 +306,13 @@
     .meta-list li,
     .status-list li {
       padding: 0.75rem 0;
-      border-top: 1px solid var(--accent-soft);
+      border-top: 1px solid rgba(169, 133, 152, 0.34);
     }
 
     .contact-box {
       margin-top: 1.5rem;
       padding: 1.25rem;
-      border-left: 4px solid var(--accent);
+      border-left: 4px solid var(--gold);
       background: var(--surface);
     }
 
@@ -250,23 +321,49 @@
       font-family: Arial, sans-serif;
       font-size: 0.8rem;
       line-height: 1.4;
-      opacity: 0.72;
+      opacity: 0.76;
+    }
+
+    .site-footer {
+      background: var(--plum);
+      color: var(--cream);
+      margin-top: 1rem;
     }
 
     footer {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 2rem 1.5rem 3rem;
-      border-top: 1px solid var(--border);
+      padding: 2.25rem 1.5rem 3rem;
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
-      color: var(--muted);
     }
 
-    footer p {
+    footer p,
+    footer a {
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
+      color: rgba(243, 232, 216, 0.86);
       margin-bottom: 0.75rem;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      color: var(--cream);
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-cover-wrap {
+        justify-content: flex-start;
+      }
+
+      .hero-cover {
+        width: min(75vw, 340px);
+      }
     }
 
     @media (max-width: 760px) {
@@ -280,25 +377,22 @@
       }
 
       .hero {
-        min-height: auto;
-        padding: 4rem 0;
+        padding: 3.5rem 0 4rem;
       }
 
       .section {
         padding: 3.5rem 0;
       }
 
-      .section-grid {
+      .section-grid,
+      .author-layout {
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
 
-      .card {
+      .card,
+      .accent-panel {
         padding: 1.5rem;
-      }
-
-      .author-layout {
-        grid-template-columns: 1fr;
       }
 
       .author-photo {
@@ -324,25 +418,39 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="site-title">
-      <div class="hero-inner">
-        <div class="eyebrow">Official Author Website</div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Official Author Website</div>
 
-        <h1 id="site-title">C.L. Johnson</h1>
+          <h1 id="site-title">C.L. Johnson</h1>
 
-        <h2>Author of the forthcoming memoir <em>Elephants and Flowers: Finding Myself Through Prince</em></h2>
+          <h2>Author of the forthcoming memoir <em>Elephants and Flowers: Finding Myself Through Prince</em></h2>
 
-        <p>
-          A memoir of music, memory, disability, faith, and becoming.
-        </p>
+          <p>
+            A memoir of music, memory, disability, faith, and becoming.
+          </p>
 
-        <p>
-          Coming Saturday, September 12, 2026.
-        </p>
+          <p class="release-date">
+            Coming Saturday, September 12, 2026.
+          </p>
 
-        <div class="button-row">
-          <a class="button" href="#book">Read About the Book</a>
-          <a class="button secondary" href="mailto:info@cljohnsonwrites.com">Contact the Author</a>
+          <div class="button-row">
+            <a class="button" href="#book">Read About the Book</a>
+            <a class="button secondary" href="mailto:info@cljohnsonwrites.com">Contact the Author</a>
+          </div>
         </div>
+
+        <figure class="hero-cover-wrap">
+          <img
+            class="hero-cover"
+            src="assets/web-cover.png"
+            alt="Cover of Elephants and Flowers: Finding Myself Through Prince by C.L. Johnson."
+          />
+          <figcaption class="cover-caption">
+            Cover illustration and design by Sandra Klein.<br />
+            © 2026 C.L. Johnson
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -418,7 +526,7 @@
           <h2 id="status-heading">Where the Book Stands</h2>
         </div>
 
-        <div class="card">
+        <div class="accent-panel">
           <p>
             <em>Elephants and Flowers: Finding Myself Through Prince</em> is currently in professional line editing and copyediting with Staci Kleinmaier, with editorial work scheduled for July 2026.
           </p>
@@ -467,12 +575,14 @@
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 C.L. Johnson. All rights reserved.</p>
-    <p class="disclaimer">
-      <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
-    </p>
-    <p><a href="mailto:info@cljohnsonwrites.com">info@cljohnsonwrites.com</a></p>
-  </footer>
+  <div class="site-footer">
+    <footer>
+      <p>© 2026 C.L. Johnson. All rights reserved.</p>
+      <p class="disclaimer">
+        <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
+      </p>
+      <p><a href="mailto:info@cljohnsonwrites.com">info@cljohnsonwrites.com</a></p>
+    </footer>
+  </div>
 </body>
 </html>
