@@ -599,6 +599,7 @@
       bottom: -120px;
       border: 1px solid rgba(200,160,74,.22);
       border-radius: 50%;
+      pointer-events: none;
     }
 
     .status-ornament {
@@ -612,6 +613,17 @@
     }
 
     .status-panel strong {
+      color: var(--cream-light);
+    }
+
+    .status-panel a {
+      position: relative;
+      z-index: 1;
+      color: var(--gold-soft);
+    }
+
+    .status-panel a:hover,
+    .status-panel a:focus-visible {
       color: var(--cream-light);
     }
 
@@ -638,7 +650,7 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .coming-soon {
+    .now-open {
       display: inline-block;
       margin-bottom: 1.35rem;
       padding: .42rem .7rem;
@@ -866,7 +878,7 @@
         <a href="#book">Book</a>
         <a href="#author">Author</a>
         <a href="#status">Status</a>
-        <a href="#order">Ordering</a>
+        <a href="ordering.html">Ordering</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -899,7 +911,7 @@
 
           <div class="button-row">
             <a class="button" href="#book">Read About the Book</a>
-            <a class="button secondary" href="#order">Ordering Information</a>
+            <a class="button secondary" href="ordering.html">Order an Inscribed Copy</a>
           </div>
         </div>
 
@@ -1024,7 +1036,8 @@
           </p>
 
           <p>
-            A separate ordering section for personally stamped and inscribed hardcover and paperback copies will be added to this site very soon.
+            Requests for personally inscribed paperback and hardcover copies can now be submitted through the
+            <a href="ordering.html"><strong>Ordering page</strong></a>.
           </p>
 
           <ul class="status-list" aria-label="Production details">
@@ -1033,38 +1046,8 @@
             <li><strong>Print proofs:</strong> Quality-control review in progress</li>
             <li><strong>Planned release:</strong> September 12, 2026</li>
             <li><strong>Retail:</strong> Amazon KDP</li>
-            <li><strong>Personally inscribed copies:</strong> Ordering details coming soon</li>
+            <li><strong>Personally inscribed copies:</strong> <a href="ordering.html">Ordering now open</a></li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-paper" id="order" aria-labelledby="order-heading">
-      <div class="section-inner section-grid">
-        <div class="section-heading">
-          <div class="section-label">Ordering</div>
-          <h2 id="order-heading">Personally Stamped &amp; Inscribed Copies</h2>
-          <div class="gold-rule" aria-hidden="true"></div>
-        </div>
-
-        <div class="ordering-panel">
-          <div class="coming-soon">Coming Soon</div>
-
-          <h3>A more personal way to order the book.</h3>
-
-          <div class="ordering-copy">
-            <p>
-              A dedicated ordering option for personally stamped and inscribed hardcover and paperback copies of <em>Elephants and Flowers: Finding Myself Through Prince</em> will be added to this site very soon.
-            </p>
-
-            <p>
-              Availability, pricing, inscription options, ordering instructions, and shipping details will be announced here as the September 12 publication date approaches.
-            </p>
-
-            <p class="ordering-note">
-              Retail hardcover, paperback, and Kindle editions will also be available through Amazon KDP.
-            </p>
-          </div>
         </div>
       </div>
     </section>
