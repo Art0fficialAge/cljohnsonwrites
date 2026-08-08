@@ -5,22 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>C.L. Johnson | Elephants and Flowers: Finding Myself Through Prince</title>
-  <meta name="description" content="The official author website of C.L. Johnson, author of the forthcoming memoir Elephants and Flowers: Finding Myself Through Prince." />
+  <meta
+    name="description"
+    content="The official author website of C.L. Johnson, author of Elephants and Flowers: Finding Myself Through Prince, coming September 12, 2026."
+  />
 
   <style>
     :root {
       --plum: #62465d;
-      --plum-deep: #2e2330;
-      --plum-soft: #a98598;
-      --parchment: #f7f1e7;
-      --surface: #fffaf3;
-      --cream: #f3e8d8;
-      --gold: #c9a24a;
-      --text: #2e2330;
-      --muted: #675c63;
-      --border: #ded1c6;
-      --shadow: rgba(46, 35, 48, 0.12);
-      --max-width: 1120px;
+      --plum-deep: #3d2939;
+      --plum-dark: #2b1a29;
+      --plum-soft: #7d6273;
+
+      --cream: #eadfce;
+      --cream-light: #f4ecdf;
+      --paper: #d8c9bb;
+      --paper-light: #fbf4e9;
+
+      --gold: #c8a04a;
+      --gold-soft: #d9bd78;
+      --gold-deep: #9c742d;
+
+      --ink: #382b33;
+      --ink-soft: #655760;
+
+      --line-plum: rgba(98, 70, 93, 0.22);
+      --shadow: 0 24px 60px rgba(43, 26, 41, 0.20);
+      --shadow-soft: 0 16px 42px rgba(43, 26, 41, 0.10);
+
+      --max-width: 1160px;
+      --serif: "Bodoni 72", Didot, "Bodoni MT", Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
     }
 
     * {
@@ -29,416 +44,852 @@
 
     html {
       scroll-behavior: smooth;
+      background: var(--plum-dark);
     }
 
     body {
       margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,.18), transparent 23rem),
+        linear-gradient(180deg, var(--cream-light), var(--cream));
       font-family: Georgia, "Times New Roman", serif;
-      background: var(--parchment);
-      color: var(--text);
-      line-height: 1.68;
+      line-height: 1.72;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .15;
+      background-image:
+        radial-gradient(circle at 25% 25%, rgba(63,38,54,.12) 0 1px, transparent 1.3px),
+        radial-gradient(circle at 75% 65%, rgba(255,255,255,.25) 0 1px, transparent 1.4px);
+      background-size: 17px 19px, 23px 29px;
+    }
+
+    ::selection {
+      color: var(--cream-light);
+      background: var(--plum);
     }
 
     a {
       color: var(--plum);
-      text-underline-offset: 4px;
+      text-decoration-color: var(--gold-deep);
       text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
     }
 
     a:hover,
-    a:focus {
+    a:focus-visible {
       color: var(--plum-deep);
       text-decoration-thickness: 2px;
     }
 
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: .75rem;
+      left: .75rem;
+      transform: translateY(-200%);
+      padding: .7rem 1rem;
+      background: var(--cream-light);
+      color: var(--plum-dark);
+      border: 2px solid var(--gold);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    /* Header */
+
     .site-header {
-      width: 100%;
-      background: var(--plum);
-      color: var(--cream);
-      border-bottom: 1px solid rgba(243, 232, 216, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      color: var(--cream-light);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.025), transparent 40%),
+        var(--plum-dark);
+      border-bottom: 1px solid rgba(200, 160, 74, .45);
+      box-shadow: 0 8px 30px rgba(43,26,41,.14);
     }
 
     .nav {
-      max-width: var(--max-width);
+      width: min(calc(100% - 3rem), var(--max-width));
+      min-height: 78px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 2rem;
     }
 
     .brand {
-      font-family: Arial, sans-serif;
-      font-size: 0.88rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--cream);
+      display: inline-flex;
+      align-items: center;
+      gap: .9rem;
+      color: var(--cream-light);
       text-decoration: none;
+    }
+
+    .brand-name,
+    .nav-links {
+      font-family: var(--sans);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    .brand-name {
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .brand-rule {
+      width: 44px;
+      height: 1px;
+      background: var(--gold);
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.92rem;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: .72rem;
+      font-weight: 700;
     }
 
     .nav-links a {
+      position: relative;
+      padding: .3rem 0;
+      color: rgba(244,236,223,.84);
       text-decoration: none;
-      color: rgba(243, 232, 216, 0.84);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: right .2s ease;
     }
 
     .nav-links a:hover,
-    .nav-links a:focus {
-      color: var(--cream);
-      text-decoration: underline;
+    .nav-links a:focus-visible {
+      color: var(--cream-light);
     }
 
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      right: 0;
     }
+
+    /* Hero */
 
     .hero {
-      padding: 4.5rem 0 5rem;
+      color: var(--cream-light);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(0,0,0,.06)),
+        radial-gradient(circle at 74% 22%, rgba(200,160,74,.11), transparent 30rem),
+        var(--plum);
+      border-bottom: 1px solid rgba(200,160,74,.5);
     }
 
-    .hero-grid {
+    .hero-inner {
+      width: min(calc(100% - 3rem), var(--max-width));
+      min-height: calc(100vh - 78px);
+      margin: 0 auto;
+      padding: clamp(4.5rem, 9vw, 7.75rem) 0;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.65fr);
-      gap: 4rem;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .78fr);
+      gap: clamp(3rem, 7vw, 6rem);
       align-items: center;
     }
 
     .hero-copy {
-      max-width: 720px;
-    }
-
-    .hero-cover-wrap {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-cover {
-      width: min(100%, 360px);
-      height: auto;
-      display: block;
-      border-radius: 10px;
-      box-shadow: 0 22px 55px var(--shadow);
-      border: 1px solid rgba(98, 70, 93, 0.16);
-      background: var(--surface);
-    }
-
-    .cover-caption {
-      margin-top: 0.85rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      line-height: 1.45;
-      text-align: center;
-      color: var(--muted);
+      max-width: 710px;
     }
 
     .eyebrow,
     .section-label {
-      font-family: Arial, sans-serif;
+      font-family: var(--sans);
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      color: var(--plum);
+      letter-spacing: .18em;
+      font-weight: 700;
+      font-size: .76rem;
     }
 
     .eyebrow {
-      margin-bottom: 1.5rem;
+      color: var(--gold-soft);
+      margin-bottom: 1.65rem;
     }
 
-    .section-label {
-      margin-bottom: 1rem;
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      text-wrap: balance;
     }
 
     h1 {
-      font-size: clamp(3.4rem, 8vw, 6.8rem);
-      line-height: 0.95;
-      margin: 0 0 1.25rem;
-      font-weight: normal;
-      letter-spacing: -0.04em;
-      color: var(--plum-deep);
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.08;
-      margin: 0 0 1.25rem;
-      font-weight: normal;
-      letter-spacing: -0.03em;
-      color: var(--plum-deep);
-    }
-
-    h3 {
-      font-size: clamp(1.45rem, 3vw, 2.1rem);
-      line-height: 1.2;
-      margin: 0 0 1rem;
-      font-weight: normal;
-      color: var(--plum);
-    }
-
-    p {
-      font-size: clamp(1.05rem, 2vw, 1.2rem);
-      max-width: 720px;
-      margin: 0 0 1.25rem;
-      color: var(--muted);
+      margin: 0;
+      color: var(--cream-light);
+      font-size: clamp(4.8rem, 10vw, 8rem);
+      line-height: .86;
+      letter-spacing: -.045em;
     }
 
     .hero h2 {
-      color: var(--plum);
+      max-width: 720px;
+      margin: 1.55rem 0 1.3rem;
+      color: var(--cream-light);
+      font-size: clamp(1.72rem, 3.7vw, 3.05rem);
+      line-height: 1.13;
+      letter-spacing: -.02em;
+    }
+
+    .hero h2 em {
+      color: var(--gold-soft);
+      font-weight: 400;
+    }
+
+    .hero-deck {
+      max-width: 600px;
+      margin: 0 0 .65rem;
+      color: rgba(244,236,223,.86);
+      font-size: clamp(1.12rem, 2vw, 1.32rem);
     }
 
     .release-date {
-      color: var(--plum-deep);
-      font-weight: bold;
+      margin: 0;
+      color: var(--gold-soft);
+      font-size: 1.04rem;
+      font-weight: 700;
+    }
+
+    .ornament {
+      width: min(315px, 65%);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: .72rem;
+      margin: 1.4rem 0;
+      color: var(--gold);
+    }
+
+    .ornament span,
+    .footer-rule span {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+
+    .ornament span:last-child,
+    .footer-rule span:last-child {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .ornament b,
+    .footer-rule b {
+      font-size: .68rem;
+      font-weight: 400;
     }
 
     .button-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 2rem;
+      gap: .8rem;
+      margin-top: 2.1rem;
     }
 
     .button {
-      display: inline-block;
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      color: var(--cream);
-      background: var(--plum);
-      padding: 0.82rem 1.05rem;
-      border-radius: 999px;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .82rem 1.25rem .78rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      background: var(--gold);
+      color: var(--plum-dark);
+      font-family: var(--sans);
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
       text-decoration: none;
-      border: 1px solid var(--plum);
-      transition: transform 0.15s ease, background 0.15s ease;
+      transition: transform .16s ease, background .16s ease, color .16s ease;
     }
 
     .button:hover,
-    .button:focus {
-      color: var(--cream);
-      background: var(--plum-deep);
-      transform: translateY(-1px);
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: var(--gold-soft);
+      color: var(--plum-dark);
     }
 
     .button.secondary {
-      color: var(--plum);
       background: transparent;
-      border: 1px solid var(--plum);
+      color: var(--cream-light);
+      border-color: rgba(217,189,120,.75);
     }
 
     .button.secondary:hover,
-    .button.secondary:focus {
-      color: var(--cream);
-      background: var(--plum);
+    .button.secondary:focus-visible {
+      background: rgba(217,189,120,.1);
+      color: var(--cream-light);
     }
 
+    .hero-mockup-wrap {
+      margin: 0;
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mockup-frame {
+      width: min(100%, 500px);
+      padding: 8px;
+      background: linear-gradient(145deg, var(--gold), #80612b 58%, var(--gold-soft));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-mockup {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(244,236,223,.28);
+    }
+
+    .cover-caption {
+      margin-top: 1rem;
+      color: rgba(244,236,223,.67);
+      font-family: var(--sans);
+      font-size: .72rem;
+      line-height: 1.55;
+      text-align: center;
+      letter-spacing: .02em;
+    }
+
+    /* Shared sections */
+
     .section {
-      padding: 4.5rem 0;
-      border-top: 1px solid var(--border);
+      position: relative;
+      border-top: 1px solid var(--line-plum);
+    }
+
+    .section-inner {
+      width: min(calc(100% - 3rem), var(--max-width));
+      margin: 0 auto;
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
     }
 
     .section-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
-      gap: 3rem;
+      grid-template-columns: minmax(230px, .74fr) minmax(0, 1.5fr);
+      gap: clamp(3rem, 7vw, 6rem);
       align-items: start;
     }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: 0 18px 45px rgba(46, 35, 48, 0.07);
+    .section-cream {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255,255,255,.45), transparent 20rem),
+        linear-gradient(180deg, var(--cream-light), var(--cream));
     }
 
-    .accent-panel {
-      background: var(--plum);
-      color: var(--cream);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: 0 18px 45px rgba(46, 35, 48, 0.12);
+    .section-paper {
+      background:
+        radial-gradient(circle at 83% 20%, rgba(255,255,255,.36), transparent 22rem),
+        var(--paper);
     }
 
-    .accent-panel h2,
-    .accent-panel h3,
-    .accent-panel p,
-    .accent-panel a {
-      color: var(--cream);
+    .section-plum {
+      background:
+        radial-gradient(circle at 85% 18%, rgba(200,160,74,.09), transparent 24rem),
+        var(--plum-deep);
+      color: var(--cream-light);
+      border-top-color: rgba(200,160,74,.34);
     }
 
-    .accent-panel .status-list {
-      color: var(--cream);
+    .section-heading {
+      position: sticky;
+      top: 115px;
     }
 
-    .accent-panel .status-list li {
-      border-top-color: rgba(243, 232, 216, 0.28);
+    .section-label {
+      margin-bottom: .9rem;
+      color: var(--gold-deep);
     }
 
-    .accent-panel .status-list strong {
-      color: #ffffff;
+    .section-heading h2 {
+      margin: 0;
+      color: var(--plum-deep);
+      font-size: clamp(2.45rem, 5vw, 4.25rem);
+      line-height: .98;
+      letter-spacing: -.035em;
     }
 
-    .author-layout {
-      display: grid;
-      grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: start;
+    .section-heading-light .section-label {
+      color: var(--gold-soft);
     }
 
-    .author-photo {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      box-shadow: 0 18px 45px rgba(46, 35, 48, 0.08);
-      display: block;
+    .section-heading-light h2 {
+      color: var(--cream-light);
     }
 
-    .author-copy p:last-child {
+    .gold-rule {
+      width: 86px;
+      height: 2px;
+      margin-top: 1.45rem;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    p {
+      margin: 0 0 1.35rem;
+      font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+    }
+
+    p:last-child {
       margin-bottom: 0;
+    }
+
+    .paper-panel {
+      padding: clamp(2rem, 4vw, 3.25rem);
+      background:
+        linear-gradient(rgba(251,244,233,.93), rgba(251,244,233,.93)),
+        radial-gradient(circle at 25% 25%, rgba(98,70,93,.08) 0 1px, transparent 1.5px);
+      background-size: auto, 21px 23px;
+      border: 1px solid rgba(156,116,45,.34);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .paper-panel p,
+    .contact-content p,
+    .ordering-copy p {
+      color: var(--ink-soft);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      margin: .08em .12em 0 0;
+      color: var(--gold-deep);
+      font-family: var(--serif);
+      font-size: 4.15rem;
+      line-height: .72;
     }
 
     .meta-list,
     .status-list {
       list-style: none;
       padding: 0;
-      margin: 1.5rem 0 0;
-      font-family: Arial, sans-serif;
-      color: var(--muted);
+      margin: 2rem 0 0;
+      font-family: var(--sans);
+      font-size: .86rem;
     }
 
     .meta-list li,
     .status-list li {
-      padding: 0.75rem 0;
-      border-top: 1px solid rgba(169, 133, 152, 0.34);
+      display: grid;
+      grid-template-columns: minmax(120px, .58fr) 1.42fr;
+      gap: 1rem;
+      padding: .85rem 0;
+      border-top: 1px solid rgba(98,70,93,.22);
+    }
+
+    .meta-list li:last-child {
+      border-bottom: 1px solid rgba(98,70,93,.22);
+    }
+
+    .meta-list strong,
+    .status-list strong {
+      color: var(--plum-deep);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: .76rem;
+    }
+
+    /* Book */
+
+    .book-content-stack {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .book-flat-cover {
+      width: min(100%, 315px);
+      margin: 0;
+    }
+
+    .book-flat-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(156,116,45,.45);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .book-flat-cover figcaption {
+      margin-top: .75rem;
+      color: var(--ink-soft);
+      font-family: var(--sans);
+      font-size: .72rem;
+      line-height: 1.5;
+      letter-spacing: .02em;
+    }
+
+    /* Author */
+
+    .author-layout {
+      display: grid;
+      grid-template-columns: minmax(205px, 300px) minmax(0, 1fr);
+      gap: clamp(2rem, 5vw, 3.6rem);
+      align-items: start;
+    }
+
+    .author-photo-wrap {
+      padding: 7px;
+      background: linear-gradient(145deg, var(--gold), var(--gold-deep));
+      box-shadow: 0 20px 48px rgba(0,0,0,.24);
+    }
+
+    .author-photo {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(244,236,223,.24);
+    }
+
+    .author-copy p {
+      color: rgba(244,236,223,.82);
+    }
+
+    .author-copy em {
+      color: var(--cream-light);
+    }
+
+    /* Production status */
+
+    .status-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2rem, 4vw, 3.1rem);
+      color: var(--cream-light);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.035), transparent 45%),
+        var(--plum);
+      border: 1px solid rgba(200,160,74,.48);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .status-panel::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -110px;
+      bottom: -120px;
+      border: 1px solid rgba(200,160,74,.22);
+      border-radius: 50%;
+    }
+
+    .status-ornament {
+      margin-bottom: 1.2rem;
+      color: var(--gold-soft);
+      font-size: .78rem;
+    }
+
+    .status-panel p {
+      color: rgba(244,236,223,.88);
+    }
+
+    .status-panel strong {
+      color: var(--cream-light);
+    }
+
+    .status-list li {
+      border-top-color: rgba(244,236,223,.18);
+    }
+
+    .status-list li:last-child {
+      border-bottom: 1px solid rgba(244,236,223,.18);
+    }
+
+    .status-list strong {
+      color: var(--gold-soft);
+    }
+
+    /* Ordering */
+
+    .ordering-panel {
+      padding: clamp(2rem, 4vw, 3.1rem);
+      background:
+        linear-gradient(rgba(251,244,233,.95), rgba(251,244,233,.95)),
+        radial-gradient(circle at 75% 20%, rgba(200,160,74,.12), transparent 20rem);
+      border: 1px solid rgba(156,116,45,.38);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .coming-soon {
+      display: inline-block;
+      margin-bottom: 1.35rem;
+      padding: .42rem .7rem;
+      color: var(--plum-deep);
+      background: rgba(200,160,74,.18);
+      border: 1px solid rgba(156,116,45,.45);
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .ordering-panel h3 {
+      margin: 0 0 1rem;
+      color: var(--plum-deep);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.1;
+    }
+
+    .ordering-note {
+      margin-top: 1.4rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid rgba(98,70,93,.20);
+      font-family: var(--sans);
+      font-size: .86rem;
+    }
+
+    /* Contact */
+
+    .contact-content {
+      max-width: 760px;
     }
 
     .contact-box {
-      margin-top: 1.5rem;
-      padding: 1.25rem;
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.45rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--plum-deep);
       border-left: 4px solid var(--gold);
-      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-mark {
+      color: var(--gold-soft);
+      font-size: .7rem;
+    }
+
+    .contact-box p {
+      margin: 0;
+    }
+
+    .contact-box a {
+      color: var(--cream-light);
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
     }
 
     .disclaimer {
-      margin-top: 1rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.8rem;
-      line-height: 1.4;
-      opacity: 0.76;
+      font-family: var(--sans);
+      font-size: .78rem;
+      line-height: 1.55;
+      letter-spacing: .01em;
     }
 
+    /* Footer */
+
     .site-footer {
-      background: var(--plum);
-      color: var(--cream);
-      margin-top: 1rem;
+      color: var(--cream-light);
+      background: var(--plum-dark);
+      border-top: 1px solid rgba(200,160,74,.56);
     }
 
     footer {
-      max-width: var(--max-width);
+      width: min(calc(100% - 3rem), var(--max-width));
       margin: 0 auto;
-      padding: 2.25rem 1.5rem 3rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+      padding: 3rem 0 3.6rem;
+      text-align: center;
+    }
+
+    .footer-rule {
+      width: min(270px, 70%);
+      margin: 0 auto 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: .7rem;
+      color: var(--gold);
     }
 
     footer p,
     footer a {
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-      color: rgba(243, 232, 216, 0.86);
-      margin-bottom: 0.75rem;
+      color: rgba(244,236,223,.72);
+      font-family: var(--sans);
+      font-size: .78rem;
     }
 
     footer a:hover,
-    footer a:focus {
-      color: var(--cream);
+    footer a:focus-visible {
+      color: var(--cream-light);
     }
 
-    @media (max-width: 860px) {
-      .hero-grid {
+    /* Responsive */
+
+    @media (max-width: 930px) {
+      .hero-inner {
+        min-height: 0;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-mockup-wrap {
+        justify-self: start;
+      }
+
+      .mockup-frame {
+        width: min(82vw, 480px);
+      }
+
+      .section-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
 
-      .hero-cover-wrap {
-        justify-content: flex-start;
-      }
-
-      .hero-cover {
-        width: min(75vw, 340px);
+      .section-heading {
+        position: static;
+        max-width: 680px;
       }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 720px) {
       .nav {
+        width: min(calc(100% - 2rem), var(--max-width));
+        min-height: auto;
+        padding: 1rem 0;
         align-items: flex-start;
         flex-direction: column;
+        gap: .75rem;
+      }
+
+      .brand-rule {
+        display: none;
       }
 
       .nav-links {
-        gap: 0.75rem;
+        width: 100%;
+        gap: .9rem;
       }
 
-      .hero {
-        padding: 3.5rem 0 4rem;
+      .hero-inner,
+      .section-inner,
+      footer {
+        width: min(calc(100% - 2rem), var(--max-width));
       }
 
-      .section {
-        padding: 3.5rem 0;
+      .hero-inner {
+        padding: 4rem 0;
       }
 
-      .section-grid,
+      h1 {
+        font-size: clamp(4.1rem, 21vw, 6rem);
+      }
+
+      .ornament {
+        width: min(260px, 76%);
+      }
+
       .author-layout {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
       }
 
-      .card,
-      .accent-panel {
+      .author-photo-wrap {
+        width: min(78vw, 280px);
+      }
+
+      .meta-list li,
+      .status-list li {
+        grid-template-columns: 1fr;
+        gap: .25rem;
+      }
+
+      .paper-panel,
+      .status-panel,
+      .ordering-panel {
         padding: 1.5rem;
       }
 
-      .author-photo {
-        max-width: 260px;
+      .mockup-frame {
+        width: min(92vw, 460px);
+      }
+
+      .book-flat-cover {
+        width: min(72vw, 280px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#top">C.L. Johnson</a>
+      <a class="brand" href="#top">
+        <span class="brand-name">C.L. Johnson</span>
+        <span class="brand-rule" aria-hidden="true"></span>
+      </a>
 
       <div class="nav-links">
         <a href="#book">Book</a>
         <a href="#author">Author</a>
         <a href="#status">Status</a>
+        <a href="#order">Ordering</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="site-title">
-      <div class="hero-grid">
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="site-title">
+      <div class="hero-inner">
         <div class="hero-copy">
           <div class="eyebrow">Official Author Website</div>
 
           <h1 id="site-title">C.L. Johnson</h1>
 
-          <h2>Author of the forthcoming memoir <em>Elephants and Flowers: Finding Myself Through Prince</em></h2>
+          <div class="ornament" aria-hidden="true">
+            <span></span><b>✦</b><span></span>
+          </div>
 
-          <p>
+          <h2>
+            Author of the forthcoming memoir
+            <em>Elephants and Flowers: Finding Myself Through Prince</em>
+          </h2>
+
+          <p class="hero-deck">
             A memoir of music, memory, disability, faith, and becoming.
           </p>
 
@@ -448,75 +899,93 @@
 
           <div class="button-row">
             <a class="button" href="#book">Read About the Book</a>
-            <a class="button secondary" href="mailto:info@cljohnsonwrites.com">Contact the Author</a>
+            <a class="button secondary" href="#order">Ordering Information</a>
           </div>
         </div>
 
-        <figure class="hero-cover-wrap">
-          <img
-            class="hero-cover"
-            src="assets/web-cover.png"
-            alt="Cover of Elephants and Flowers: Finding Myself Through Prince by C.L. Johnson."
-          />
+        <figure class="hero-mockup-wrap">
+          <div class="mockup-frame">
+            <img
+              class="hero-mockup"
+              src="assets/Elephants-and-Flowers_FINAL-MOCKUP.jpeg"
+              alt="Three-dimensional hardcover mockup of Elephants and Flowers: Finding Myself Through Prince by C.L. Johnson."
+            />
+          </div>
           <figcaption class="cover-caption">
-            Cover illustration and design by Sandra Klein.<br />
+            Book cover design and mockup by Sandra Klein.<br />
             © 2026 C.L. Johnson
           </figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section" id="book" aria-labelledby="book-heading">
-      <div class="section-grid">
-        <div>
+    <section class="section section-cream" id="book" aria-labelledby="book-heading">
+      <div class="section-inner section-grid">
+        <div class="section-heading">
           <div class="section-label">The Book</div>
           <h2 id="book-heading"><em>Elephants and Flowers: Finding Myself Through Prince</em></h2>
+          <div class="gold-rule" aria-hidden="true"></div>
         </div>
 
-        <div class="card">
-          <p>
-            At three years old, C.L. Johnson heard Prince’s “Little Red Corvette” and turned toward a sound that would follow him for the rest of his life.
-          </p>
+        <div class="book-content-stack">
+          <figure class="book-flat-cover">
+            <img
+              src="assets/Elephants-and-Flowers_Cover.jpg"
+              alt="Front cover of Elephants and Flowers: Finding Myself Through Prince by C.L. Johnson."
+            />
+            <figcaption>
+              Cover illustration and design by Sandra Klein.
+            </figcaption>
+          </figure>
 
-          <p>
-            Born three months premature with spastic quadriplegic cerebral palsy, Johnson grew up inside a body often lifted, positioned, assisted, and interpreted by others. Prince’s music reached him differently. It did not need a ramp, a transfer, or permission from his muscles. It came through the air and opened a private world where rhythm, faith, longing, grief, desire, and self-definition could begin to speak.
-          </p>
+          <div class="paper-panel">
+            <p class="dropcap">
+              At three years old, C.L. Johnson heard Prince’s “Little Red Corvette” and turned toward a sound that would follow him for the rest of his life.
+            </p>
 
-          <p>
-            In <em>Elephants and Flowers: Finding Myself Through Prince</em>, Johnson traces a lifelong relationship with Prince’s music, not as celebrity worship, but as spiritual formation. From childhood discovery in small-town Minnesota to grief after his grandmother’s death, from a suicidal crisis interrupted by “Purple Rain” to the complicated dignity of living inside disability and dependence, Prince’s work becomes a companion through the hardest and holiest questions of Johnson’s life.
-          </p>
+            <p>
+              Born three months premature with spastic quadriplegic cerebral palsy, Johnson grew up inside a body often lifted, positioned, assisted, and interpreted by others. Prince’s music reached him differently. It did not need a ramp, a transfer, or permission from his muscles. It came through the air and opened a private world where rhythm, faith, longing, grief, desire, and self-definition could begin to speak.
+            </p>
 
-          <p>
-            Intimate, reflective, and spiritually searching, <em>Elephants and Flowers</em> is a memoir about music as survival, disability as embodied complexity, fandom as community, grief as love in motion, and the long practice of learning to answer with a life of one’s own.
-          </p>
+            <p>
+              In <em>Elephants and Flowers: Finding Myself Through Prince</em>, Johnson traces a lifelong relationship with Prince’s music, not as celebrity worship, but as spiritual formation. From childhood discovery in small-town Minnesota to grief after his grandmother’s death, from a suicidal crisis interrupted by “Purple Rain” to the complicated dignity of living inside disability and dependence, Prince’s work becomes a companion through the hardest and holiest questions of Johnson’s life.
+            </p>
 
-          <p>
-            <em>Elephants and Flowers: Finding Myself Through Prince</em> will be available Saturday, September 12, 2026 through Amazon KDP in hardcover, paperback, and Kindle formats.
-          </p>
+            <p>
+              Intimate, reflective, and spiritually searching, <em>Elephants and Flowers</em> is a memoir about music as survival, disability as embodied complexity, fandom as community, grief as love in motion, and the long practice of learning to answer with a life of one’s own.
+            </p>
 
-          <ul class="meta-list" aria-label="Book details">
-            <li><strong>Genre:</strong> Memoir</li>
-            <li><strong>Status:</strong> Forthcoming</li>
-            <li><strong>Release date:</strong> September 12, 2026</li>
-            <li><strong>Formats:</strong> Hardcover, Paperback, and Kindle</li>
-          </ul>
+            <p>
+              <em>Elephants and Flowers: Finding Myself Through Prince</em> will be available Saturday, September 12, 2026 through Amazon KDP in hardcover, paperback, and Kindle formats.
+            </p>
+
+            <ul class="meta-list" aria-label="Book details">
+              <li><strong>Genre:</strong> Memoir</li>
+              <li><strong>Status:</strong> Forthcoming</li>
+              <li><strong>Release date:</strong> September 12, 2026</li>
+              <li><strong>Formats:</strong> Hardcover, Paperback, and Kindle</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="author" aria-labelledby="author-heading">
-      <div class="section-grid">
-        <div>
+    <section class="section section-plum" id="author" aria-labelledby="author-heading">
+      <div class="section-inner section-grid">
+        <div class="section-heading section-heading-light">
           <div class="section-label">The Author</div>
           <h2 id="author-heading">About C.L. Johnson</h2>
+          <div class="gold-rule" aria-hidden="true"></div>
         </div>
 
         <div class="author-layout">
-          <img
-            class="author-photo"
-            src="assets/author-photo.png"
-            alt="Author C.L. Johnson smiling in a studio portrait."
-          />
+          <div class="author-photo-wrap">
+            <img
+              class="author-photo"
+              src="assets/author-photo.png"
+              alt="Author C.L. Johnson smiling in a studio portrait."
+            />
+          </div>
 
           <div class="author-copy">
             <p>
@@ -531,49 +1000,90 @@
       </div>
     </section>
 
-    <section class="section" id="status" aria-labelledby="status-heading">
-      <div class="section-grid">
-        <div>
+    <section class="section section-cream" id="status" aria-labelledby="status-heading">
+      <div class="section-inner section-grid">
+        <div class="section-heading">
           <div class="section-label">Production Status</div>
           <h2 id="status-heading">Where the Book Stands</h2>
+          <div class="gold-rule" aria-hidden="true"></div>
         </div>
 
-        <div class="accent-panel">
+        <div class="status-panel">
+          <div class="status-ornament" aria-hidden="true">✦</div>
+
           <p>
-            <em>Elephants and Flowers: Finding Myself Through Prince</em> is currently in professional line editing and copyediting with Staci Kleinmaier, with editorial work scheduled for July 2026.
+            <strong>Physical proof copies are now being reviewed for quality control.</strong>
           </p>
 
           <p>
-            The memoir is planned for release on <strong>Saturday, September 12, 2026</strong> in hardcover, paperback, and Kindle editions. Cover design and final production materials are in progress.
+            <em>Elephants and Flowers: Finding Myself Through Prince</em> has entered its final production stage. Paperback and hardcover proof copies are being reviewed for print quality, cover reproduction, binding, trim, and other physical production details ahead of publication.
           </p>
 
           <p>
-            Ordering information, signed-copy details, and additional publication updates will be posted here as release approaches.
+            The memoir remains scheduled for release on <strong>Saturday, September 12, 2026</strong> in hardcover, paperback, and Kindle editions.
+          </p>
+
+          <p>
+            A separate ordering section for personally stamped and inscribed hardcover and paperback copies will be added to this site very soon.
           </p>
 
           <ul class="status-list" aria-label="Production details">
-            <li><strong>Editing:</strong> In progress</li>
-            <li><strong>Cover design:</strong> In progress</li>
+            <li><strong>Manuscript:</strong> Complete</li>
+            <li><strong>Cover design:</strong> Complete</li>
+            <li><strong>Print proofs:</strong> Quality-control review in progress</li>
             <li><strong>Planned release:</strong> September 12, 2026</li>
-            <li><strong>Retail path:</strong> Amazon KDP</li>
+            <li><strong>Retail:</strong> Amazon KDP</li>
+            <li><strong>Personally inscribed copies:</strong> Ordering details coming soon</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact" aria-labelledby="contact-heading">
-      <div class="section-grid">
-        <div>
-          <div class="section-label">Contact</div>
-          <h2 id="contact-heading">Get in touch</h2>
+    <section class="section section-paper" id="order" aria-labelledby="order-heading">
+      <div class="section-inner section-grid">
+        <div class="section-heading">
+          <div class="section-label">Ordering</div>
+          <h2 id="order-heading">Personally Stamped &amp; Inscribed Copies</h2>
+          <div class="gold-rule" aria-hidden="true"></div>
         </div>
 
-        <div>
+        <div class="ordering-panel">
+          <div class="coming-soon">Coming Soon</div>
+
+          <h3>A more personal way to order the book.</h3>
+
+          <div class="ordering-copy">
+            <p>
+              A dedicated ordering option for personally stamped and inscribed hardcover and paperback copies of <em>Elephants and Flowers: Finding Myself Through Prince</em> will be added to this site very soon.
+            </p>
+
+            <p>
+              Availability, pricing, inscription options, ordering instructions, and shipping details will be announced here as the September 12 publication date approaches.
+            </p>
+
+            <p class="ordering-note">
+              Retail hardcover, paperback, and Kindle editions will also be available through Amazon KDP.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="contact" aria-labelledby="contact-heading">
+      <div class="section-inner section-grid">
+        <div class="section-heading">
+          <div class="section-label">Contact</div>
+          <h2 id="contact-heading">Get in touch</h2>
+          <div class="gold-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="contact-content">
           <p>
             For reader notes, interview requests, podcast invitations, review inquiries, or questions about <em>Elephants and Flowers</em>, please write to:
           </p>
 
           <div class="contact-box">
+            <span class="contact-mark" aria-hidden="true">✦</span>
             <p>
               <a href="mailto:info@cljohnsonwrites.com">info@cljohnsonwrites.com</a>
             </p>
@@ -589,6 +1099,7 @@
 
   <div class="site-footer">
     <footer>
+      <div class="footer-rule" aria-hidden="true"><span></span><b>✦</b><span></span></div>
       <p>© 2026 C.L. Johnson. All rights reserved.</p>
       <p class="disclaimer">
         <em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.
