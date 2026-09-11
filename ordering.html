@@ -296,6 +296,37 @@
       align-items: center;
     }
 
+    .delay-band {
+      color: var(--ink);
+      background: var(--paper-light);
+      border-bottom: 1px solid rgba(156,116,45,.38);
+    }
+
+    .delay-notice {
+      width: min(calc(100% - 3rem), var(--max-width));
+      margin: 0 auto;
+      padding: clamp(2rem, 4vw, 3rem) 0;
+    }
+
+    .delay-notice-inner {
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+      background: rgba(255,255,255,.42);
+      border: 1px solid rgba(156,116,45,.44);
+      border-left: 5px solid var(--gold);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .delay-notice h2 {
+      margin: .35rem 0 1rem;
+      color: var(--plum-deep);
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.12;
+    }
+
+    .delay-notice p:last-child {
+      margin-bottom: 0;
+    }
+
     .eyebrow {
       margin-bottom: 1.4rem;
       color: var(--gold-soft);
@@ -659,6 +690,7 @@
       }
 
       .order-hero-inner,
+      .delay-notice,
       .section-inner,
       footer {
         width: min(calc(100% - 2rem), var(--max-width));
@@ -731,7 +763,7 @@
           <h1 id="ordering-title">Order a Personally Inscribed Copy</h1>
 
           <p class="hero-subtitle">
-            Request a paperback or hardcover copy of <em>Elephants and Flowers: Finding Myself Through Prince</em> with a personal inscription from C.L. Johnson.
+            Request a paperback or hardcover copy of <em>Elephants and Flowers: Finding Myself Through Prince</em> with a personal inscription from C.L. Johnson. Order requests remain open during the fulfillment delay.
           </p>
 
           <p class="hero-price-line">
@@ -746,7 +778,12 @@
               rel="noopener noreferrer"
             >Open the Order Form</a>
 
-            <a class="button secondary" href="index.html">Return to Main Site</a>
+            <a
+              class="button secondary"
+              href="https://www.amazon.com/dp/B0H8KN9B4P"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Buy on Amazon</a>
           </div>
         </div>
 
@@ -756,6 +793,24 @@
             alt="Front cover of Elephants and Flowers: Finding Myself Through Prince by C.L. Johnson."
           />
         </figure>
+      </div>
+    </section>
+
+    <section class="delay-band" aria-labelledby="delay-heading">
+      <div class="delay-notice">
+        <div class="delay-notice-inner">
+          <div class="section-label">Important Order Update</div>
+          <h2 id="delay-heading">The first batch of inscribed copies has been delayed until October 8.</h2>
+          <p>
+            The first shipment of paperback and hardcover copies for personal inscription is now expected on <strong>October 8, 2026</strong>. I will not send PayPal invoices until after that date, so no payment is due in the meantime.
+          </p>
+          <p>
+            If you have submitted an order request for an inscribed physical copy, I am offering to email you a complimentary PDF copy free of charge as an apology for the delay. Please write to <a href="mailto:info@cljohnsonwrites.com"><strong>info@cljohnsonwrites.com</strong></a> from the email address used on your order to request your PDF.
+          </p>
+          <p>
+            Thank you for your patience and for choosing a copy I can inscribe personally for you.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -787,7 +842,7 @@
           </p>
 
           <p>
-            Shipping is calculated after I review your request. Please do not send payment in advance. I will send a PayPal invoice to the email address you provide, with the book price and shipping shown clearly before you pay.
+            Shipping is calculated after I review your request. Please do not send payment in advance. Because the first batch of books has been delayed until October 8, I will not send PayPal invoices until after that date. Your invoice will show the book price and shipping clearly before you pay.
           </p>
 
           <p>
@@ -819,9 +874,9 @@
           <article class="step">
             <div class="step-number">02</div>
             <div>
-              <h3>Receive your invoice.</h3>
+              <h3>Receive your invoice after October 8.</h3>
               <p>
-                I will review the request, calculate shipping, and send a PayPal invoice to the email address on your order. The order becomes confirmed when the invoice is paid.
+                I will review the request and calculate shipping, but invoices are paused during the delay. After October 8, I will send a PayPal invoice to the email address on your order. The order becomes confirmed when the invoice is paid.
               </p>
             </div>
           </article>
@@ -859,7 +914,7 @@
           </div>
 
           <p class="fine-print">
-            Email is required so that I can send your PayPal invoice and communicate about the order. A phone number is optional. Your contact and shipping information will be used only for fulfilling your book order.
+            Email is required so that I can communicate about the order, provide the complimentary PDF offer during the delay, and send your PayPal invoice after October 8. A phone number is optional. Your contact and shipping information will be used only for fulfilling your book order.
           </p>
         </div>
       </div>
