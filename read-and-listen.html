@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#25182c">
+  <meta name="description" content="Read an excerpt from Elephants and Flowers: Finding Myself Through Prince, the memoir by C.L. Johnson. An author-read audio sample is planned.">
+  <title>Read &amp; Listen | C.L. Johnson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --plum: #25182c;
+      --plum-soft: #38263f;
+      --plum-deep: #190f20;
+      --gold: #d7b977;
+      --ivory: #f6efe5;
+      --muted: #d5c8d3;
+      --line: rgba(215, 185, 119, .33);
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --body: 'Source Serif 4', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--plum); color: var(--ivory); font-family: var(--body); font-size: 1.07rem; line-height: 1.75; }
+    a { color: var(--gold); }
+    a:hover { color: #f4d9a0; }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+    .skip { position: absolute; top: -6rem; left: 1rem; background: var(--ivory); color: var(--plum); padding: .6rem 1rem; z-index: 10; }
+    .skip:focus { top: .75rem; }
+    .site-header { background: rgba(25,15,32,.9); border-bottom: 1px solid var(--line); }
+    .header-inner { max-width: 1130px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; padding: 1.1rem 1.5rem; }
+    .brand { text-decoration: none; color: var(--ivory); font-family: var(--display); font-size: 1.65rem; line-height: 1; font-weight: 700; letter-spacing: .035em; }
+    nav { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem 1.3rem; }
+    nav a { color: var(--ivory); font-family: Georgia, serif; font-size: .91rem; letter-spacing: .03em; text-decoration: none; }
+    nav a:hover, nav a[aria-current="page"] { color: var(--gold); }
+    nav a[aria-current="page"] { border-bottom: 1px solid var(--gold); }
+    .hero { padding: clamp(3.8rem, 8vw, 6.5rem) 1.5rem 3.7rem; text-align: center; background: radial-gradient(circle at 50% 5%, #47334c 0, var(--plum) 66%); border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 .8rem; color: var(--gold); font-family: Georgia, serif; font-size: .79rem; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; }
+    h1, h2 { font-family: var(--display); line-height: 1.08; font-weight: 600; }
+    h1 { font-size: clamp(3.1rem, 8vw, 5.2rem); margin: 0; }
+    .ornament { color: var(--gold); font-size: 1.1rem; margin: 1rem auto; }
+    .hero .intro { max-width: 40rem; margin: 0 auto; color: var(--muted); font-size: 1.13rem; line-height: 1.7; }
+    main { max-width: 790px; margin: 0 auto; padding: 3.8rem 1.5rem 5rem; }
+    .excerpt-heading { margin: 0 0 2.5rem; text-align: center; }
+    .excerpt-heading h2 { margin: .15rem 0 .5rem; font-size: clamp(2.2rem, 5vw, 3.1rem); }
+    .meta { margin: 0; color: var(--muted); font-style: italic; font-size: .96rem; }
+    .prose { font-size: clamp(1.08rem, 2vw, 1.22rem); line-height: 1.93; }
+    .prose p { margin: 0 0 1.25em; }
+    .prose p:first-child::first-letter { float: left; font-family: var(--display); font-size: 4.15em; line-height: .75; padding: .13em .09em .04em 0; color: var(--gold); }
+    .prose .short-line { margin-bottom: .65em; }
+    .prose .emph { font-style: italic; }
+    .sample-end { margin: 2.6rem auto 0; color: var(--gold); text-align: center; font-size: 1.1rem; letter-spacing: .3em; }
+    .audio-note { margin-top: 4rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 2rem 0 2.2rem; text-align: center; }
+    .audio-note h2 { font-size: 2.5rem; margin: 0 0 .6rem; }
+    .audio-note p { margin: 0 auto; max-width: 33rem; color: var(--muted); }
+    .audio-slot { margin: 1.2rem 0 0; }
+    audio { display: block; width: 100%; max-width: 34rem; margin: 1.4rem auto 0; }
+    .cta { margin: 4.2rem auto 0; text-align: center; }
+    .cta h2 { font-size: 2.6rem; margin: 0 0 .6rem; }
+    .cta p { max-width: 32rem; margin: 0 auto 1.45rem; color: var(--muted); }
+    .button { display: inline-block; background: var(--gold); border: 2px solid var(--gold); border-radius: 3px; color: var(--plum-deep); font-family: Georgia, serif; font-size: .94rem; font-weight: bold; text-decoration: none; padding: .7rem 1.55rem; }
+    .button:hover { background: transparent; color: var(--gold); }
+    footer { border-top: 1px solid var(--line); background: var(--plum-deep); padding: 2rem 1.5rem; color: var(--muted); text-align: center; font-size: .86rem; line-height: 1.65; }
+    footer p { margin: .4rem 0; }
+    @media (max-width: 660px) { .header-inner { justify-content: center; } nav { justify-content: center; gap: .3rem .9rem; } main { padding-top: 3rem; } .prose { line-height: 1.8; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to the excerpt</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="C.L. Johnson — Home">C.L. Johnson</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#book">Book</a>
+        <a href="read-and-listen.html" aria-current="page">Read &amp; Listen</a>
+        <a href="index.html#author">Author</a>
+        <a href="index.html#status">Status</a>
+        <a href="ordering.html">Ordering</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero" aria-labelledby="page-title">
+    <p class="eyebrow">Elephants and Flowers · An Excerpt</p>
+    <h1 id="page-title">Read &amp; Listen</h1>
+    <div class="ornament" aria-hidden="true">✦</div>
+    <p class="intro">An opening glimpse of <em>Elephants and Flowers: Finding Myself Through Prince</em> — a moment when music, longing, and the body's limits converged.</p>
+  </section>
+  <main id="main-content">
+    <section aria-labelledby="excerpt-title">
+      <div class="excerpt-heading">
+        <p class="eyebrow">From the Prologue</p>
+        <h2 id="excerpt-title">My Name Is Prince</h2>
+        <p class="meta">An excerpt from the memoir by C.L. Johnson</p>
+      </div>
+      <div class="prose">
+        <p>On the evening of July 26, 2014, my life reached a milestone I will remember forever.</p>
+        <p>I sat in my wheelchair in the front row of Paisley Park’s small soundstage, near the right edge of the stage, while singer-songwriter Kandace Springs performed her guest set. My sister Paula sat in the row behind me.</p>
+        <p>Prince stood against the wall on that same side of the room, joyfully keeping time with Kandace’s music, a cabasa alive in his hand. Then, out of the corner of his eye, he caught sight of me.</p>
+        <p>He glided over to me and extended it toward me without speaking. His expression seemed to ask, <em>Do U want 2 play this?</em> Then, as if to make his meaning unmistakable, he gently shook it again, showing me how to play it.</p>
+        <p>The cabasa hovered between us.</p>
+        <p>Wrapped in metal beads and ordinarily meant to disappear inside rhythm, it became something else in Prince’s hand. It became an invitation, a question my body heard before my mind could arrange an answer.</p>
+        <p>While my mind scrambled to understand what to do and how to respond, my face remained locked in a beaming grin. My head nodded yes, though the movement felt barely perceptible. Prince returned my grin in kind. For those few seconds, the joy inside me felt powerful enough to rival the sun.</p>
+        <p>The room was small enough to make the usual distance between artist and audience disappear. Prince stood directly in front of me, not sealed behind lights, myth, or impossible height. He was there.</p>
+        <p class="short-line">Within reach.</p>
+        <p>I was thirty-four years old, and for twenty-two of those years I had carried the wish to meet him and say something true, not something clever or polished, but the kind of sentence a person stores for decades because simple gratitude is too small for it.</p>
+        <p><em>Thank you. You saved me. You shaped me. I have been listening all my life.</em></p>
+        <p>Those were the words, or something close to them. What stays with me is the pressure of everything I wanted him to know gathering behind my mouth.</p>
+        <p>Prince kept the cabasa extended between us.</p>
+        <p>Taking it required me to lean forward farther than I could trust, push my contracted elbows toward a reach they could not fully make, and close splayed fingers around an instrument I was afraid I might drop.</p>
+        <p>At the same time, I was trying to understand what would happen if I took it. Did Prince expect me to play the cabasa for a moment and then hand it back? My mind latched onto that possibility until it felt like certainty.</p>
+        <p>The other choice was to call loudly over Kandace’s music and ask Prince to come closer, but excitement had already tightened my voice into a strained, breathless register I did not trust. I feared startling him, breaking the intimacy of the offer.</p>
+        <p class="short-line">My hand did not rise.</p>
+        <p class="short-line">My voice did not come.</p>
+        <p>A rhythm was being offered to me, and I could not enter it.</p>
+        <p>This was not because I had nothing to say. I had too much. When I was nine and my grandmother died, his music helped me sit beside grief before I understood its size. When I was twelve and darkness entered my body in a form I could not yet name, the music helped me stay. It taught me that faith and desire could live in the same life, that the sacred did not have to be bloodless, that sound could reach places language had not yet found.</p>
+        <p>His work was already more than music to me.</p>
+        <p class="short-line">I had made a life inside it.</p>
+        <p>And now the man whose sound had helped make that inner life possible was standing close enough to ask for an answer.</p>
+        <p class="short-line">I froze.</p>
+        <p>Shock, awe, and the peculiar self-consciousness of cerebral palsy rose in me at once. I was painfully conscious of movement, timing, reach, affectation, the whole visible grammar of my body. The moment was simple, but I was not simple inside it.</p>
+        <p>I looked toward Paula, hoping she might intervene. She was as stunned as I was and did not respond. Prince followed my glance and held the cabasa out to her.</p>
+        <p>He gave a small shrug and moved on.</p>
+        <p>It was over in seconds.</p>
+        <p>That is the brutal trick of certain moments: they pass quickly, then live for years.</p>
+      </div>
+      <p class="sample-end" aria-label="End of excerpt">✦</p>
+    </section>
+    <section class="audio-note" aria-labelledby="audio-title">
+      <p class="eyebrow">In the Author's Voice</p>
+      <h2 id="audio-title">Listen</h2>
+      <p>An author-read recording of this passage will be added here.</p>
+      <!-- WHEN THE RECORDING IS READY:
+           1. Put the file at audio/prologue-excerpt.mp3 in your site repository.
+           2. Replace the sentence above with this player:
+              <audio controls preload="none" aria-label="C.L. Johnson reads the Prologue excerpt">
+                <source src="audio/prologue-excerpt.mp3" type="audio/mpeg">
+                Your browser does not support audio playback.
+              </audio>
+           3. Keep the written excerpt above available as the transcript.
+           Do not add commercial Prince music without a license.
+      -->
+    </section>
+    <section class="cta" aria-labelledby="cta-title">
+      <p class="eyebrow">Continue the Journey</p>
+      <h2 id="cta-title">The story doesn't end here.</h2>
+      <p>Explore <em>Elephants and Flowers</em> in Kindle, hardcover, or paperback.</p>
+      <a class="button" href="ordering.html">Choose Your Edition</a>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 C.L. Johnson. All rights reserved.</p>
+    <p><em>Elephants and Flowers</em> is not endorsed, sponsored, or approved by the Prince Estate or Paisley Park Enterprises.</p>
+    <p><a href="mailto:info@cljohnsonwrites.com">info@cljohnsonwrites.com</a></p>
+  </footer>
+</body>
+</html>
